@@ -1,6 +1,20 @@
 'use strict';
 
-class Car {
+const Vehicle = require('./vehicle-constructor');
+
+class Car extends Vehicle{
+  constructor(name){
+    super(name, 4);
+  }
 }
 
-module.exports = Car;
+class Motorcycle extends Vehicle{
+  constructor(name){
+    super(name, 2);
+  }
+  wheelie() {
+    return 'Wheee!';
+  }
+}
+
+module.exports = {Car,Motorcycle};
